@@ -76,3 +76,5 @@ Logout → User can securely log out from the system.
 ✅ Rate Limiting → Prevents brute-force attacks on login/registration APIs.✅ Session Expiration → Secure session handling with NextAuth.js.✅ Environment Variables → Secrets are stored securely in .env.✅ Validation & Error Handling → Proper error messages for invalid input.
 
 
+
+
