@@ -75,33 +75,4 @@ Logout → User can securely log out from the system.
 
 ✅ Rate Limiting → Prevents brute-force attacks on login/registration APIs.✅ Session Expiration → Secure session handling with NextAuth.js.✅ Environment Variables → Secrets are stored securely in .env.✅ Validation & Error Handling → Proper error messages for invalid input.
 
-🧪 Running Tests
-
-This project includes unit tests for authentication flows. Run the tests using:
-
-npm run test
-
-🚀 Deployment
-
-To deploy on Vercel, run:
-
-vercel
-
-Or deploy on Netlify, Railway, or Render with the proper environment variables.
-
-💡 Future Improvements
-
-Add email verification after registration.
-
-Implement password reset functionality.
-
-Enhance role-based access control (RBAC).
-
-🙌 Contributing
-
-Feel free to fork this project, raise issues, and submit PRs!
-
-📜 License
-
-This project is MIT Licensed. You are free to use and modify it.
 
