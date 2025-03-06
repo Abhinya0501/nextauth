@@ -24,32 +24,6 @@ Unit Testing (for key authentication flows)
 
 Fully Responsive Design
 
-📂 Project Structure
-
-my-auth-project/
-│-- .next/               # Next.js build folder
-│-- prisma/              # Prisma database schema
-│-- public/              # Static assets
-│-- src/
-│   │-- app/
-│   │   │-- api/
-│   │   │   │-- auth/[...nextauth]/route.ts   # NextAuth.js configuration
-│   │   │   ├── register/route.ts             # User Registration API
-│   │   │   ├── login/route.ts                 # User Login API
-│   │   │   ├── rate-limit.ts                  # Rate Limiting Middleware
-│   │   │-- dashboard/page.tsx                # Protected Dashboard Page
-│   │   │-- login/page.tsx                     # Login Page
-│   │   │-- register/page.tsx                  # Registration Page
-│   │   │-- layout.tsx                         # Main Layout
-|   |   |-- page.tsx
-│   ├── components/                            # Reusable UI Components
-│   ├── lib/                                   # Utility functions
-│   ├── styles/                                # Global styles
-│-- .env                                      # Environment Variables
-│-- package.json                              # Project dependencies
-│-- README.md                                 # Documentation
-│-- next.config.js                            # Next.js Configuration
-
 🛠️ Installation & Setup
 
 1️⃣ Clone the Repository
