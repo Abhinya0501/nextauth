@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Authentication System with NextAuth.js
 
-## Getting Started
+📌 Project Overview
 
-First, run the development server:
+This is a full-featured authentication system built with Next.js 14 using NextAuth.js for authentication. It supports credentials-based login, as well as social authentication (Google & GitHub). The project is designed with MongoDB (via Prisma) for database management, rate limiting for security, and responsive styling.
 
-```bash
+🚀 Features
+
+User Authentication (Login, Registration, Logout)
+
+Social Login (Google & GitHub)
+
+Secure Credential Authentication (Email & Password with Prisma + MongoDB)
+
+Session Management using NextAuth.js
+
+Rate Limiting for API protection
+
+Protected Dashboard (Only logged-in users can access it)
+
+User-friendly UI with Tailwind CSS
+
+Unit Testing (for key authentication flows)
+
+Fully Responsive Design
+
+📂 Project Structure
+
+my-auth-project/
+│-- .next/               # Next.js build folder
+│-- prisma/              # Prisma database schema
+│-- public/              # Static assets
+│-- src/
+│   │-- app/
+│   │   │-- api/
+│   │   │   │-- auth/[...nextauth]/route.ts   # NextAuth.js configuration
+│   │   │   ├── register/route.ts             # User Registration API
+│   │   │   ├── login/route.ts                 # User Login API
+│   │   │   ├── rate-limit.ts                  # Rate Limiting Middleware
+│   │   │-- dashboard/page.tsx                # Protected Dashboard Page
+│   │   │-- login/page.tsx                     # Login Page
+│   │   │-- register/page.tsx                  # Registration Page
+│   │   │-- layout.tsx                         # Main Layout
+|   |   |-- page.tsx
+│   ├── components/                            # Reusable UI Components
+│   ├── lib/                                   # Utility functions
+│   ├── styles/                                # Global styles
+│-- .env                                      # Environment Variables
+│-- package.json                              # Project dependencies
+│-- README.md                                 # Documentation
+│-- next.config.js                            # Next.js Configuration
+
+🛠️ Installation & Setup
+
+1️⃣ Clone the Repository
+
+git clone https://github.com/your-username/my-auth-project.git
+cd my-auth-project
+
+2️⃣ Install Dependencies
+
+npm install
+
+3️⃣ Set Up Environment Variables
+
+Create a .env file in the root folder and add the following:
+
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+DATABASE_URL=mongodb+srv://your-mongo-url
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+4️⃣ Set Up Prisma & Database
+
+npx prisma db push
+
+5️⃣ Start the Development Server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Your app will be running at http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔑 Authentication Flow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+User Registration → User signs up with email and password.
 
-## Learn More
+Login with Credentials → User logs in with email & password.
 
-To learn more about Next.js, take a look at the following resources:
+Login with Google/GitHub → Users can authenticate with OAuth providers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Protected Routes → Only logged-in users can access the dashboard.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Session Handling → Users remain logged in across sessions.
 
-## Deploy on Vercel
+Logout → User can securely log out from the system.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🛡️ Security Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Rate Limiting → Prevents brute-force attacks on login/registration APIs.✅ Session Expiration → Secure session handling with NextAuth.js.✅ Environment Variables → Secrets are stored securely in .env.✅ Validation & Error Handling → Proper error messages for invalid input.
+
+🧪 Running Tests
+
+This project includes unit tests for authentication flows. Run the tests using:
+
+npm run test
+
+🚀 Deployment
+
+To deploy on Vercel, run:
+
+vercel
+
+Or deploy on Netlify, Railway, or Render with the proper environment variables.
+
+💡 Future Improvements
+
+Add email verification after registration.
+
+Implement password reset functionality.
+
+Enhance role-based access control (RBAC).
+
+🙌 Contributing
+
+Feel free to fork this project, raise issues, and submit PRs!
+
+📜 License
+
+This project is MIT Licensed. You are free to use and modify it.
+
